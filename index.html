@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextHold - 下一点 | Your Climbing Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            background: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: -30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .description {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            opacity: 0.8;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-toggle button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .lang-toggle button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Chinese content (hidden by default) */
+        .zh { display: none; }
+        .en { display: block; }
+
+        body.chinese .zh { display: block; }
+        body.chinese .en { display: none; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .tagline { font-size: 1.1em; }
+            .content { padding: 25px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-toggle">
+        <button onclick="toggleLanguage()">中文 / EN</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="icon.png" alt="NextHold App Icon" class="app-icon">
+            <h1>
+                <span class="en">NextHold</span>
+                <span class="zh">下一点</span>
+            </h1>
+            <p class="tagline">
+                <span class="en">Your Personal Climbing Companion</span>
+                <span class="zh">你的私人攀岩助手</span>
+            </p>
+            <a href="#" class="download-btn">
+                <span class="en">Download on App Store</span>
+                <span class="zh">在 App Store 下载</span>
+            </a>
+        </header>
+
+        <div class="content">
+            <p class="description en">
+                NextHold helps you track, analyze, and improve your climbing performance.
+                Whether you're a boulderer or sport climber, track your progress and reach your next hold!
+            </p>
+            <p class="description zh">
+                下一点帮助你记录、分析和提升攀岩水平。
+                无论你是抱石还是难度攀岩爱好者，记录你的进步，向下一个岩点进发！
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="en">Quick Logging</h3>
+                    <h3 class="zh">快速记录</h3>
+                    <p class="en">Record sessions, routes, grades, and attempts with just a few taps.</p>
+                    <p class="zh">几步操作即可记录训练、路线、难度和尝试次数。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="en">Analytics</h3>
+                    <h3 class="zh">数据分析</h3>
+                    <p class="en">View send rates, grade progression, and training frequency with visual charts.</p>
+                    <p class="zh">通过可视化图表查看完攀率、难度趋势和训练频率。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="en">Training Plans</h3>
+                    <h3 class="zh">训练计划</h3>
+                    <p class="en">Follow structured training templates for beginners to advanced climbers.</p>
+                    <p class="zh">提供从入门到高级的结构化训练模板。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="en">AI Coach</h3>
+                    <h3 class="zh">AI 教练</h3>
+                    <p class="en">Get personalized advice and training plans based on your data.</p>
+                    <p class="zh">基于你的数据获取个性化建议和训练计划。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="en">Supported Grading Systems</h2>
+                <h2 class="zh">支持的难度系统</h2>
+                <p class="en">V-Scale, Font, French, YDS, UIAA - Set your preferred system once and use it everywhere.</p>
+                <p class="zh">V-Scale、Font、French、YDS、UIAA - 一次设置，全局使用。</p>
+            </div>
+
+            <div class="section" id="privacy">
+                <h2 class="en">Privacy Policy</h2>
+                <h2 class="zh">隐私政策</h2>
+                <p class="en">
+                    NextHold respects your privacy. All your climbing data is stored locally on your device.
+                    We do not collect, store, or share any personal information or climbing data.
+                    The app does not require an account or internet connection to function.
+                    If you use the AI Coach feature (Pro), your climbing statistics are sent to generate personalized advice,
+                    but no personally identifiable information is transmitted.
+                </p>
+                <p class="zh">
+                    下一点尊重你的隐私。所有攀岩数据都存储在你的设备本地。
+                    我们不会收集、存储或分享任何个人信息或攀岩数据。
+                    应用无需账户或网络连接即可使用。
+                    如果你使用 AI 教练功能（Pro），你的攀岩统计数据会被发送以生成个性化建议，
+                    但不会传输任何个人身份信息。
+                </p>
+            </div>
+
+            <div class="section" id="support">
+                <h2 class="en">Support</h2>
+                <h2 class="zh">支持</h2>
+                <p class="en">
+                    Have questions or feedback? Contact us at: <a href="mailto:support@nexthold.app">support@nexthold.app</a>
+                </p>
+                <p class="zh">
+                    有问题或反馈？联系我们：<a href="mailto:support@nexthold.app">support@nexthold.app</a>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Yangbin Zhang. All rights reserved.</p>
+            <div class="links">
+                <a href="#privacy">
+                    <span class="en">Privacy Policy</span>
+                    <span class="zh">隐私政策</span>
+                </a>
+                <a href="#support">
+                    <span class="en">Support</span>
+                    <span class="zh">支持</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('chinese');
+        }
+
+        // Auto-detect language
+        if (navigator.language.startsWith('zh')) {
+            document.body.classList.add('chinese');
+        }
+    </script>
+</body>
+</html>
